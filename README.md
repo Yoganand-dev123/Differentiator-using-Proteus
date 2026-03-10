@@ -11,6 +11,9 @@ To design and simulate a Differentiator circuit using μA741 in Proteus Design S
 •	CRO / Oscilloscope
 •	Connecting wires
 ## Circuit Diagram
+
+<img width="1045" height="488" alt="DEFFFF" src="https://github.com/user-attachments/assets/ae858e11-eaa0-42a2-94a1-4a8a4cbc55ab" />
+
 ## Connection Details:
 •	Input signal → Capacitor (C) → Inverting terminal (Pin 2)
 •	Feedback resistor (Rf) → Between Output (Pin 6) and Pin 2
@@ -32,11 +35,22 @@ A Differentiator circuit produces an output voltage proportional to the rate of 
 6.	Run simulation.
 7.	Observe input and output waveforms on CRO.
 ## Tabulation
-S.No 	         Input Signal	              Frequency	            Expected  Output	            Practical Observation
+
+| Sl. No | Input Voltage (Vin) | Time Interval | Output Voltage (Vout)           |
+| ------ | ------------------- | ------------- | ------------------------------- |
+| 1      | +5 V                | 0 – 0.5 ms    | 0 V → –2.5 V (decreasing ramp)  |
+| 2      | +5 V                | 0.5 – 1 ms    | –2.5 V → –5 V                   |
+| 3      | –5 V                | 1 – 1.5 ms    | –5 V → –2.5 V (increasing ramp) |
+| 4      | –5 V                | 1.5 – 2 ms    | –2.5 V → 0 V                    |
+| 5      | +5 V                | Next cycle    | Pattern repeats                 |
+
 ## Waveforms
 •	Sine input → Cosine output (90° phase shift)
 •	Square input → Positive & negative spikes
 •	Triangular input → Square wave
+
+<img width="1372" height="875" alt="DEFF" src="https://github.com/user-attachments/assets/6dab6116-a75a-45b8-8532-cabce04b5a55" />
+
 ## Result
 The Differentiator circuit using μA741 Op-Amp was successfully designed and simulated in Proteus.
 The output waveform is proportional to the rate of change of input voltage.
@@ -48,8 +62,21 @@ The circuit behaves as a differentiator.
 •	Used in wave shaping and signal processing applications.
 ## Viva Questions
 1.	What is a differentiator?
+
+Differentiator: An op-amp circuit whose output is proportional to the rate of change of the input signal.
+
 2.	Write the output equation of differentiator.
+
+Vout​=−RCdtdVi
+
 3.	Why is output leading input?
+
+Why Output Leads Input: Because differentiation produces a signal proportional to slope, causing a 90° phase lead for sinusoidal input.
+
 4.	What happens at very high frequency?
+
+At Very High Frequency: Gain increases excessively and the circuit becomes unstable with noise amplification.
+
 5.	What is practical differentiator?
 
+Practical Differentiator: A modified differentiator with added resistor and capacitor to limit high-frequency gain and improve stability.
